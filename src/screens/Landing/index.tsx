@@ -21,8 +21,8 @@ import {
 function Landing() {
   const navigation = useNavigation();
 
-  function navigateToHome() {
-    navigation.navigate('Home');
+  function navigateToSearch() {
+    navigation.navigate('Search');
   }
 
   return (
@@ -43,7 +43,7 @@ function Landing() {
       </ImageContainer>
 
       <ButtonContainer>
-        <Button onPress={navigateToHome}>
+        <Button onPress={navigateToSearch}>
           <BtnText>Pesquisar</BtnText>
         </Button>
       </ButtonContainer>

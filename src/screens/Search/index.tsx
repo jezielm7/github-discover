@@ -4,12 +4,12 @@ import { Text } from 'react-native';
 
 import { Container } from './styles';
 
-function Home() {
+function Search() {
   return (
     <Container>
-      <Text>Home</Text>
+      <Text>Search</Text>
     </Container>
   );
 };
 
-export default Home;
+export default Search;
