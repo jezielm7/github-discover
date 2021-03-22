@@ -1,13 +1,26 @@
 import React from 'react';
-
 import { Text } from 'react-native';
 
-import { Container } from './styles';
+import Header from '../../components/Header';
+import SearchItem from '../../components/SearchItem';
+
+import { 
+  Container,
+  ScrollList, 
+} from './styles';
 
 function Favorites() {
   return (
     <Container>
-      <Text>Favorites</Text>
+      <Header title="Meus Favoritos" />
+
+      <ScrollList>
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+      </ScrollList>
     </Container>
   );
 };
