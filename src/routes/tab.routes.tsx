@@ -37,7 +37,8 @@ const TabRouter = () => {
           // inactiveBackgroundColor: '#ebebf8',
         }}
       >
-        <Screen name="Pesquisa" component={Search} options={{
+        <Screen name="Search" component={Search} options={{
+          tabBarLabel: 'Pesquisa',
           tabBarIcon: ({ size, focused }) => {
             return (
               <SearchIcon
@@ -48,7 +49,8 @@ const TabRouter = () => {
             )
           }
         }} />
-        <Screen name="Favoritos" component={Favorites} options={{
+        <Screen name="Favorites" component={Favorites} options={{
+          tabBarLabel: 'Favoritos',
           tabBarIcon: ({ size, focused }) => {
             return (
               <FavIcon
