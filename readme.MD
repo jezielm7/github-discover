@@ -55,3 +55,14 @@ Para clonar o projeto, utilize os comandos:
   # Inicie o projeto
   ❯ yarn android
 ```
+
+## Screenshots 📸
+
+<div>
+  <img width="350" src=".github/landing.jpg" />
+  <img width="350" src=".github/filter_inputs.jpg" />
+  <img width="350" src=".github/list_user.jpg" />
+  <img width="350" src=".github/list_repos.jpg" />
+  <img width="350" src=".github/fav_repo.jpg" />
+  <img width="350" src=".github/fav_screen.jpg" />
+</div>
