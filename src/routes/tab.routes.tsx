@@ -1,11 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import FavIcon from 'react-native-vector-icons/Feather';
-import SearchIcon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import Search from '../screens/Search';
 import Favorites from '../screens/Favorites';
+
+import normalize from '../utils/normalize';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ const TabRouter = () => {
       <Navigator
         tabBarOptions={{
           style: {
-            height: 60,
+            height: normalize(60),
             borderTopWidth: 0,
             backgroundColor: '#030812',
           },
@@ -24,24 +25,22 @@ const TabRouter = () => {
           },
           iconStyle: {
             flex: 0,
-            width: 24,
-            height: 24,
+            width: normalize(24),
+            height: normalize(24),
           },
           labelStyle: {
-            marginTop: 8,
-            fontSize: 12,
+            marginTop: normalize(8),
+            fontSize: normalize(12),
           },
           activeTintColor: '#bf94ff',
           inactiveTintColor: '#efeff1',
-          // activeBackgroundColor: '#fafafc',
-          // inactiveBackgroundColor: '#ebebf8',
         }}
       >
-        <Screen name="Search" component={Search} options={{
+        <Screen name="SearchScreen" component={Search} options={{
           tabBarLabel: 'Pesquisa',
           tabBarIcon: ({ size, focused }) => {
             return (
-              <SearchIcon
+              <Icon
                 name="search-outline"
                 size={size}
                 color={focused ? '#bf94ff' : '#efeff1'}
@@ -53,8 +52,8 @@ const TabRouter = () => {
           tabBarLabel: 'Favoritos',
           tabBarIcon: ({ size, focused }) => {
             return (
-              <FavIcon
-                name="star"
+              <Icon
+                name="heart"
                 size={size}
                 color={focused ? '#bf94ff' : '#efeff1'}
               />
