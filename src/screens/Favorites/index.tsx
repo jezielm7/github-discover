@@ -1,25 +1,52 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage';
+
+import Repo from '../../types/Repo';
 
 import Header from '../../components/Header';
-import SearchItem from '../../components/SearchItem';
+import RepoItem from '../../components/RepoItem';
 
-import { 
+import {
   Container,
-  ScrollList, 
+  ScrollList,
 } from './styles';
 
 function Favorites() {
+  const [favorites, setFavorites] = useState([]);
+
+  function loadFavorites() {
+    AsyncStorage.getItem('favorites').then(response => {
+      if (response) {
+        const favoredRepos = JSON.parse(response);
+
+        setFavorites(favoredRepos);
+      }
+    });
+  };
+
+  useFocusEffect(
+    React.useCallback(() => {
+      loadFavorites();
+    }, [])
+  );
+
   return (
     <Container>
       <Header title="Meus Favoritos" />
 
-      <ScrollList>
-        <SearchItem />
-        <SearchItem />
-        <SearchItem />
-        <SearchItem />
-        <SearchItem />
+      <ScrollList
+        showsVerticalScrollIndicator={false}
+      >
+        {favorites.map((repo: Repo) => {
+          return (
+            <RepoItem
+              key={repo.id}
+              repo={repo}
+              favored
+            />
+          )
+        })}
       </ScrollList>
     </Container>
   );
