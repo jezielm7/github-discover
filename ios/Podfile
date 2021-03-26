@@ -12,6 +12,8 @@ target 'pedidoPago' do
     :hermes_enabled => false
   )
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   target 'pedidoPagoTests' do
     inherit! :complete
     # Pods for testing
