@@ -1,6 +1,6 @@
 # Pedido Pago Challenge
 
-### O desafio consiste em filtrar listar usuários ou repositórios. (Github API)
+### O desafio consiste em filtrar e listar usuários ou repositórios. (Github API)
 
 ## 👨‍💻 Tecnologias Utilizadas
 
